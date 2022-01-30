@@ -2,7 +2,7 @@ var softwareVersion = '0.1';
 
 var id;
 var age;
-var gender;
+
 var sessionNumber;
 var studyID;
 var targetType;
@@ -26,18 +26,14 @@ var numberOfTestBlocks = 4; // Test Block Size
 function getInputData() {
 	id = document.getElementById('ID').value;
 	age = document.getElementById('age').value;
-	for (var i=0; i < document.form.gender.length; i++) {
-	   if (document.form.gender[i].checked) {
-	      gender = document.form.gender[i].value;
-	   }
-	}
+	
 	sessionNumber = document.getElementById('sessionNumber').value;
 	studyID = document.getElementById('studyID').value;
 	groupID = document.getElementById('groupID').value;
 	targetType = document.getElementById('targetType').value;
 	monitorSize = document.getElementById('monitorSize').value;
 	ppi = calculatePPI();
-	setupData = [id, age, gender, sessionNumber, studyID, groupID, targetType, new Date(), 'endDate', monitorSize, ppi];
+	setupData = [id, age, sessionNumber, studyID, groupID, targetType, new Date(), 'endDate', monitorSize, ppi];
 	setupDisplay();
 }
 

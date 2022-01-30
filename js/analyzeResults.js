@@ -1,6 +1,6 @@
 //This is where all the heavy lifting happens.  This is the statistical analysis of the results.
 
-//userInfo: 0-userID, 1-age, 2-gender, 3-sessionNumber, 4-studyID, 5-groupID, 6-stimulusType, 7-sessionStartDate, 8-sessionEndDate, 9-displaySize, 10-displayWidth, 11-displayHeight, 12-ppi
+//userInfo: 0-userID, 1-age, 3-sessionNumber, 4-studyID, 5-groupID, 6-stimulusType, 7-sessionStartDate, 8-sessionEndDate, 9-displaySize, 10-displayWidth, 11-displayHeight, 12-ppi
 
 //Note that results contains 0-practice, 1-test1, 2-test2;
 //Results: 0-cueType, 1-targetType, 2-targetPosition, 3-cuePosition, 4-targetDirection, 5-flankDirection, 6-stage1Time, 7-stage4Time, 8-keyPressed, 9-correct, 10-trialStartDate, 11-targetOnTime
@@ -67,7 +67,7 @@ function generateSummary(userInfo, results) {
 	summary[1][6] = formatMilliseconds(userInfo[8]-userInfo[7]);	//SessionDur
 	summary[1][7] = userInfo[3];							//Session
 	summary[1][8] = userInfo[1];							//Age
-	summary[1][9] = userInfo[2];							//Sex
+
 	summary[1][10] = userInfo[5];							//Group
 	summary[1][11] = allResults.length						//ANT.N
 	summary[1][12] = median(allCorrectRT);					//med.all
