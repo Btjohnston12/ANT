@@ -52,8 +52,31 @@
 				<label>Leave Blank</label>
 				<input type="text" name="age" id="age" required />
 				<br />
-				
-				<label>Target Type:</label>
+				<table id=genderTable>
+					<tr>
+						<td>
+							<label>Gender:</label>
+						</td>
+						<td>
+							<input type="radio" name="gender" value="M" />Male
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="F" />Female
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="N" />Non-Binary
+						</td>
+					</tr>
+					<tr>
+						<td></td><td>
+							<input type="radio" name="gender" value="X" />Prefer not to say
+						</td>
+					</tr>
+				<label hidden ="hidden">Target Type:</label>
 				<select name="targetType" id="targetType" size="1">
 				</select>
 				<br />
