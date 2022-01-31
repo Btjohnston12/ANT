@@ -21,7 +21,14 @@ body {
 	right: 5px;
 	
 }
+#genderTable {
+	border-collapse: collapse;
+}
 
+#genderTable td {
+	padding: 0; 
+	margin: 0;
+}
 .previousButton {
 	position: absolute;
 	bottom: 10px;
