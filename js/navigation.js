@@ -45,8 +45,21 @@ function calculatePPI() {
 }
 
 function submitForm() {
+	
 	getInputData();
-	pushView('instructionPage1');	
+	if (document.getElementById('studyID').value.trim() == "" ){
+	alert("Please Enter SONA ID");
+	}
+	if (document.getElementById('ID').value.trim() == "" ){
+		alert("Please Enter Name");
+		}
+	else{
+		pushView('instructionPage1');
+	}
+	
+
+
+
 }
 
 function pushView(viewID) {
