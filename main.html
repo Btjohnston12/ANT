@@ -32,8 +32,7 @@
 				<img src="images/Logo.png" id='logo' width="25%" />
 				<div name="firefox" id="firefox">
 					<h4>This testing utility is designed for use with Firefox.</h4>
-					<p id="browserWarning">Other browsers are UNSUPPORTED but may work.  Internet Explorer will yield INACCURATE results and is NOT recommended.</p>
-				</div>
+					</div>
 				<p>Please enter the following information:</p>
 			</center>
 			<form name="form" id="form">
@@ -46,34 +45,32 @@
 				<label>SONA ID #:</label>
 				<input type="text" name="studyID" id="studyID" required />
 				<br />
-				<label>Leave Blank</label>
-				<input type="text" name="groupID" id="groupID" required />
+				
+				<input type="hidden" name="groupID" id="groupID" required />
 				<br />
-				<label>Leave Blank</label>
-				<input type="text" name="age" id="age" required />
+				
+				<input type="hidden" name="age" id="age" required />
 				<br />
 				<table id=genderTable>
 					<tr>
+						
 						<td>
-							<label>Gender:</label>
-						</td>
-						<td>
-							<input type="radio" name="gender" value="M" />Male
+							<input type="hidden" name="gender" value="M" />
 						</td>
 					</tr>
 					<tr>
 						<td></td><td>
-							<input type="radio" name="gender" value="F" />Female
+							<input type="hidden" name="gender" value="F" />
 						</td>
 					</tr>
 					<tr>
 						<td></td><td>
-							<input type="radio" name="gender" value="N" />Non-Binary
+							<input type="hidden" name="gender" value="N" />
 						</td>
 					</tr>
 					<tr>
 						<td></td><td>
-							<input type="radio" name="gender" value="X" />Prefer not to say
+							<input type="hidden" name="gender" value="X" />
 						</td>
 					</tr>
 				</table>
@@ -169,13 +166,13 @@
 					</tr>
 				</table>
 			</center>
-			<p>Keeps your eyes fixed on the cue during the text, rather than moving them to look at the arrows. <u><span class='targetTypeRef'>target</span>s</u>.</p>
+			<p>Keeps your eyes fixed on the cue during the test, rather than moving your eyes to look at the <u><span class='targetTypeRef'>target</span>s</u>.</p>
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
 			<input class="nextButton" type="button" name="next" value="Next" onclick="pushView('instructionPage5');" />
 		</div>
 
 		<div id="instructionPage3" class="instructionsPage" style="visibility:hidden">
-			<p>Sometimes, one or more asterisks <img src="images/star.png" class="cue imageintext" /> will appear shortly before the <span class='targetTypeRef'>target</span>s.</p>
+			<p>Sometimes, one or more asterisks <img src="images/star.png" class="cue imageintext" /> will appear shortly before the  <span class='targetTypeRef'>target</span>s.</p>
 			<p>When they are presented, the asterisks always appear exactly one half second before the <span class='targetTypeRef'>target</span>s.</p>
 			<p>If only one asterisk appears, and it is above or below the cross, it also tells you the location in which the <span class='targetTypeRef'>target</span>s will appear.</p>
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
@@ -190,7 +187,7 @@
 		</div>
 
 		<div id="instructionPage5" class="instructionsPage" style="visibility:hidden">
-			<p>There are <span id="numberOfTestBlocks"></span> blocks of trials, with short breaks in between.</p>
+			<p>There are 2 blocks of trials, with short breaks in between.</p>
 			<p>The first block is for practice, and takes about 2 minutes.</p>
 			<p>Click the 'Next' button when you are ready to begin.</p>
 			<input class="previousButton" type="button" name="previous" value="Previous" onclick="popView();" />
