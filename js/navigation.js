@@ -54,9 +54,7 @@ function submitForm() {
 	if (document.getElementById('studyID').value.trim() == "" ){
 	alert("Please Enter SONA ID");
 	}
-	if (document.getElementById('ID').value.trim() == "" ){
-		alert("Please Enter Name");
-		}
+	
 	else{
 		pushView('instructionPage1');
 	}
