@@ -1,3 +1,55 @@
+const { google } = require('googleapis');
+const path = require('path')
+const fs = require('fs')
+const downloadsFolder = require('downloads-folder');
+console.log(downloadsFolder());
+
+
+const CLIENT_ID = '307087679981-jmf3j1uj59oar4ngljuc17i6tj78kgai.apps.googleusercontent.com'
+const CLIENT_SECRET = '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';
+const REDIRECT_URI = 'https://developers.google.com/oauthplayground/';
+
+const REFRESH_TOKEN = 
+'1//04_El3Jj_V_vLCgYIARAAGAQSNwF-L9Ir1bbl4PiXzfHniT5-J5Mw44zEXTPwWwXVNjgwHtq83qkCChpB8Yd0MjTwLDIEOvY_rN4'
+
+const oauth2Client = new google.auth.OAuth2(
+    CLIENT_ID,
+    CLIENT_SECRET,
+    REDIRECT_URI
+
+);
+
+oauth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+
+const drive = google.drive({
+    version: 'v3',
+    auth: oauth2Client
+})
+
+const filePath = path.join (downloadsFolder(),'wrewer - 2022-01-31 - Data.csv')
+
+async function uploadFile() {
+    try{
+
+const response = await drive.files.create({
+    requestBody: {
+        name: 'EKUANT.csv',
+        mimeType: 'text/csv'
+    },
+    media: {
+
+    mimeType: 'text/csv',
+    body: fs.createReadStream(filePath)
+},
+})
+console.log(response.data);
+
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+
 //This file needs some refactoring to tidy it up a little.
 
 //Takes the data as a multidimensional array and builds it into a nice CSV string, with an optional newline character.  It is recommended to just use \r\n, as it should produce a newline on every platform, but if you want to include code to detect the platform you can do that, and pass in the appropriate newline string.
@@ -38,6 +90,8 @@ function generateExportLink(data) {
 	var csvSummary = generateSummary(setupData,data)
 
 	//To create the download link
-	createDownloadLink('summaryDownloadLink',fileName+' - Summary.csv',csvSummary,"Export Summary");
-	createDownloadLink('dataDownloadLink',fileName+' - Data.csv',csvData,"Export Raw Data");
+	createDownloadLink('summaryDownloadLink','EKUANTSummary.csv',csvSummary,"Export Summary");
+	createDownloadLink('dataDownloadLink','EKUANTData.csv',csvData,"Export Raw Data");
 }
+
+
